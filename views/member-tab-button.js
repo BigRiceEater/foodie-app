@@ -6,7 +6,7 @@ class MemberTabButton extends Component {
   state = {};
   render() {
     return (
-      <TabButton>
+      <TabButton onPress={() => {}}>
         <FontAwesome name='user' size={35} color='white' />
       </TabButton>
     );

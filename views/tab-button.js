@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
 class TabButton extends Component {
   state = {};
   render() {
-    return <View style={styles.button}>{this.props.children}</View>;
+    return (
+      <TouchableOpacity onPress={this.props.onPress}>
+        <View style={styles.button}>{this.props.children}</View>
+      </TouchableOpacity>
+    );
   }
 }
 
