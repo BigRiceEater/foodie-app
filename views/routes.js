@@ -1,9 +1,13 @@
+import React, { Component } from 'react';
+import { Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 
 import FeaturedScreen from './featured/screen';
 import SettingsScreen from './settings';
 import InboxScreen from './inbox';
 import ShopsScreen from './shops';
+
+import MemberTabButton from './member-tab-button';
 
 const noShadowHeaderOptions = {
   headerTintColor: 'tomato',
@@ -23,7 +27,14 @@ const Routes = {
   ),
   Shops: ShopsScreen,
   Inbox: InboxScreen,
-  Settings: SettingsScreen
+  Settings: SettingsScreen,
+  Member: {
+    screen: () => null, //empty screen
+    navigationOptions: () => ({
+      tabBarIcon: <MemberTabButton />,
+      tabBarLabel: <Text />
+    })
+  }
 };
 
 export default Routes;
