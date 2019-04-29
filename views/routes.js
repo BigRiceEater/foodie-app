@@ -30,8 +30,8 @@ const Routes = {
   Settings: SettingsScreen,
   Member: {
     screen: () => null, //empty screen
-    navigationOptions: () => ({
-      tabBarIcon: <MemberTabButton />,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: <MemberTabButton navigation={navigation} />,
       tabBarLabel: <Text />
     })
   }

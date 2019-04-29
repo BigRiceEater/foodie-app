@@ -1,4 +1,16 @@
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import TabNavigator from './views/bottom-navigator';
+import MemberCardModal from './views/modal/member-card';
 
-export default createAppContainer(TabNavigator);
+const rootStack = createStackNavigator(
+  {
+    main: TabNavigator,
+    modal: createStackNavigator({ MemberCard: MemberCardModal })
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none'
+  }
+);
+
+export default createAppContainer(rootStack);
