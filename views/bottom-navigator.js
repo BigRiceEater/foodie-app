@@ -6,6 +6,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import Routes from './routes';
+import FoodieTabBar from './foodie-tab-bar';
 
 const TabNavigator = createBottomTabNavigator(Routes, {
   defaultNavigationOptions: ({ navigation }) => ({
@@ -28,6 +29,7 @@ const TabNavigator = createBottomTabNavigator(Routes, {
       return <IconComponent name={iconName} size={25} color={tintColor} />;
     }
   }),
+  tabBarComponent: FoodieTabBar,
   tabBarOptions: {
     activeTintColor: 'tomato',
     inactiveTintColor: 'gray'
