@@ -15,14 +15,19 @@ class TabButton extends Component {
 const styles = StyleSheet.create({
   button: {
     position: 'relative',
-    top: -10,
-    right: 5,
+    top: -15,
+    right: 7,
     alignItems: 'center',
     justifyContent: 'center',
     width: 75,
     height: 75,
     backgroundColor: 'tomato',
-    borderRadius: 50
+    borderRadius: 40,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 5
   }
 });
 
