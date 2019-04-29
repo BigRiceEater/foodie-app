@@ -15,8 +15,8 @@ class TabButton extends Component {
 const styles = StyleSheet.create({
   button: {
     position: 'relative',
-    top: -15,
-    right: 7,
+    top: -40,
+    right: 10,
     alignItems: 'center',
     justifyContent: 'center',
     width: 75,

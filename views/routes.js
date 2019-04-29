@@ -27,14 +27,14 @@ const Routes = {
   ),
   Shops: ShopsScreen,
   Inbox: InboxScreen,
-  Settings: SettingsScreen,
-  Member: {
-    screen: () => null, //empty screen
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: <MemberTabButton navigation={navigation} />,
-      tabBarLabel: <Text />
-    })
-  }
+  Settings: SettingsScreen
+  // Member: {
+  //   screen: () => null, //empty screen
+  //   navigationOptions: ({ navigation }) => ({
+  //     tabBarIcon: <MemberTabButton navigation={navigation} />,
+  //     tabBarLabel: <Text />
+  //   })
+  // }
 };
 
 export default Routes;

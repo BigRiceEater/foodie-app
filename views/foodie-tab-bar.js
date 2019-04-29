@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 
+import MemberTabButton from './member-tab-button';
+
 const S = StyleSheet.create({
   container: { flexDirection: 'row', height: 52, elevation: 2 },
   tabButton: { flex: 1, justifyContent: 'center', alignItems: 'center' }
@@ -44,6 +46,7 @@ const FoodieTabBar = (props) => {
           </TouchableOpacity>
         );
       })}
+      <MemberTabButton navigation={navigation} />
     </SafeAreaView>
   );
 };
