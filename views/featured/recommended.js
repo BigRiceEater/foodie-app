@@ -25,6 +25,7 @@ class RecommendedShops extends Component {
     return (
       <FlatList
         horizontal
+        showsHorizontalScrollIndicator={false}
         data={this.state.shops}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <ShopCard data={item} />}
