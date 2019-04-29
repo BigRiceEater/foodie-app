@@ -41,7 +41,6 @@ class RecommendedShops extends Component {
     axios
       .get(this.state.api)
       .then((res) => {
-        console.log(res.data);
         this.setState({ shops: res.data });
       })
       .catch((err) => {
