@@ -1,19 +1,8 @@
 import React, { Component } from 'react';
-import { FlatList, View, Text, StyleSheet, Image } from 'react-native';
-
+import { FlatList } from 'react-native';
 import axios from 'axios';
 
-const ShopCard = (props) => {
-  const { title, imageUrl } = props.data;
-  return (
-    <View style={styles.shop}>
-      <Image style={{ width: 150, height: 200 }} source={{ uri: imageUrl }} />
-      <Text numberOfLines={1} style={styles.shopTitle}>
-        {title}
-      </Text>
-    </View>
-  );
-};
+import ShopCard from './shop-card';
 
 class RecommendedShops extends Component {
   state = {
@@ -39,23 +28,5 @@ class RecommendedShops extends Component {
     });
   }
 }
-
-const styles = StyleSheet.create({
-  shop: {
-    margin: 10
-  },
-  shopTitle: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    padding: 10,
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: 'black',
-    backgroundColor: '#FFFFFFCC'
-  }
-});
 
 export default RecommendedShops;
