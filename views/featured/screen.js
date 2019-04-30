@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
 
 import RecommendedShops from './recommended';
+import DummyFlatList from './../components/dummy-flatlist';
 
 class FeaturedScreen extends Component {
   static navigationOptions = {
@@ -9,9 +10,10 @@ class FeaturedScreen extends Component {
   };
   render() {
     return (
-      <View>
+      <ScrollView>
         <RecommendedShops />
-      </View>
+        <DummyFlatList />
+      </ScrollView>
     );
   }
 }
