@@ -6,16 +6,18 @@ import BlurOverlay, {
   openOverlay
 } from 'react-native-blur-overlay';
 
+import MemberTabButton from './../member-tab-button';
+
 class MemberCard extends Component {
   static navigationOptions = { header: null };
 
-  renderBlurChilds = () => {
+  renderBlurChilds() {
     return (
       <View>
-        <Text style={{ color: 'red' }}>Hi</Text>;
+        <MemberTabButton />
       </View>
     );
-  };
+  }
 
   componentDidMount() {
     openOverlay();
@@ -23,7 +25,6 @@ class MemberCard extends Component {
 
   render() {
     return (
-      // <View style={styles.container}>
       <BlurOverlay
         radius={14}
         downsampling={2}
@@ -38,9 +39,8 @@ class MemberCard extends Component {
           this.props.onPress();
         }}
         blurStyle='light'
-        // children={this.renderBlurChilds}
+        children={this.renderBlurChilds()}
       />
-      // </View>
     );
   }
 }
