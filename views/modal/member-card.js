@@ -51,9 +51,9 @@ class MemberCard extends Component {
 const styles = StyleSheet.create({
   safearea: {
     flex: 1,
-    backgroundColor: 'lightcoral'
+    backgroundColor: 'transparent'
   },
-  container: { flex: 1, backgroundColor: 'lightgreen' },
+  container: { flex: 1, backgroundColor: 'transparent' },
   fab: {
     position: 'absolute',
     bottom: 17,
