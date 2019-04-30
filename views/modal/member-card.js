@@ -10,21 +10,37 @@ class MemberCard extends Component {
   static navigationOptions = { header: null };
 
   renderBlurChilds = () => {
-    return <Text>Hi</Text>;
+    return (
+      <View>
+        <Text style={{ color: 'red' }}>Hi</Text>;
+      </View>
+    );
   };
+
+  componentDidMount() {
+    openOverlay();
+  }
 
   render() {
     return (
-      <View style={styles.container}>
-        <BlurOverlay
-          radius={14}
-          downsampling={2}
-          brightness={-200}
-          customStyles={{ alignItems: 'center', justifyContent: 'center' }}
-          blurStyle='dark'
-          children={this.renderBlurChilds()}
-        />
-      </View>
+      // <View style={styles.container}>
+      <BlurOverlay
+        radius={14}
+        downsampling={2}
+        brightness={-200}
+        customStyles={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+        onPress={() => {
+          closeOverlay();
+          this.props.onPress();
+        }}
+        blurStyle='light'
+        // children={this.renderBlurChilds}
+      />
+      // </View>
     );
   }
 }
@@ -33,8 +49,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black'
+    alignItems: 'center'
   },
   modal: {
     position: 'absolute',

@@ -15,7 +15,10 @@ const ShopCard = (props) => {
 
 const styles = StyleSheet.create({
   shop: {
-    margin: 10
+    margin: 10,
+    width: 150,
+    height: 200,
+    backgroundColor: 'lightgreen'
   },
   shopTitle: {
     position: 'absolute',
