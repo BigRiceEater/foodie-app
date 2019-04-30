@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+import BlurOverlay, {
+  closeOverlay,
+  openOverlay
+} from 'react-native-blur-overlay';
+
 class MemberCard extends Component {
   static navigationOptions = { header: null };
+
+  renderBlurChilds = () => {
+    return <Text>Hi</Text>;
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.modal} />
-        <Text>Member</Text>
+        <BlurOverlay
+          radius={14}
+          downsampling={2}
+          brightness={-200}
+          customStyles={{ alignItems: 'center', justifyContent: 'center' }}
+          blurStyle='dark'
+          children={this.renderBlurChilds()}
+        />
       </View>
     );
   }
