@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, SafeAreaView, StyleSheet } from 'react-native';
 
 import BlurOverlay, {
   closeOverlay,
   openOverlay
 } from 'react-native-blur-overlay';
 
-import MemberTabButton from './../member-tab-button';
+import MemberFab from './../member-fab';
 
 class MemberCard extends Component {
   static navigationOptions = { header: null };
 
   renderBlurChilds() {
     return (
-      <View>
-        <MemberTabButton />
-      </View>
+      <SafeAreaView style={styles.safearea}>
+        <View style={styles.container}>
+          <View style={styles.fab}>
+            <MemberFab />
+          </View>
+        </View>
+      </SafeAreaView>
     );
   }
 
@@ -30,9 +34,7 @@ class MemberCard extends Component {
         downsampling={2}
         brightness={-200}
         customStyles={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center'
+          flex: 1
         }}
         onPress={() => {
           closeOverlay();
@@ -46,21 +48,15 @@ class MemberCard extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safearea: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: 'lightcoral'
   },
-  modal: {
+  container: { flex: 1, backgroundColor: 'lightgreen' },
+  fab: {
     position: 'absolute',
-    backgroundColor: 'grey',
-    top: '10%',
-    bottom: '10%',
-    left: '10%',
-    right: '10%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: 20
+    bottom: 10,
+    right: 10
   }
 });
 
