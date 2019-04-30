@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, SafeAreaView, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 
 import BlurOverlay, {
   closeOverlay,
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: 'lightgreen' },
   fab: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 17,
     right: 10
   }
 });
