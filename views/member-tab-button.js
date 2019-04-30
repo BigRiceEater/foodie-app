@@ -6,15 +6,10 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 class MemberTabButton extends Component {
   state = {};
 
-  handlePress = () => {
-    const { navigation } = this.props;
-    navigation.navigate('MemberCard');
-  };
-
   render() {
     return (
       <View style={styles.button}>
-        <TabButton onPress={this.handlePress}>
+        <TabButton onPress={this.props.onPress}>
           <FontAwesome name='user' size={35} color='white' />
         </TabButton>
       </View>

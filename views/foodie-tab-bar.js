@@ -22,6 +22,8 @@ const S = StyleSheet.create({
 class FoodieTabBar extends Component {
   closeModal = () => this.setState({ showModal: false });
 
+  openModal = () => this.setState({ showModal: true });
+
   state = {
     showModal: true
   };
@@ -42,7 +44,7 @@ class FoodieTabBar extends Component {
     return (
       <SafeAreaView>
         <Modal style={{ zIndex: 1 }} transparent visible={this.state.showModal}>
-          <MemberCard onPress={this.closeModal} />
+          <MemberCard onPress={this.closeModal} onFabPress={this.closeModal} />
         </Modal>
         <View style={S.container}>
           {routes.map((route, routeIndex) => {
@@ -70,7 +72,7 @@ class FoodieTabBar extends Component {
               </TouchableOpacity>
             );
           })}
-          <MemberTabButton navigation={navigation} style={{ zIndex: 4 }} />
+          <MemberTabButton onPress={this.openModal} />
         </View>
       </SafeAreaView>
     );

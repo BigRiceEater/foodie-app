@@ -17,7 +17,7 @@ class MemberCard extends Component {
       <SafeAreaView style={styles.safearea}>
         <View style={styles.container}>
           <View style={styles.fab}>
-            <MemberFab />
+            <MemberFab onPress={this.props.onFabPress} />
           </View>
         </View>
       </SafeAreaView>

@@ -6,7 +6,7 @@ class MemberFab extends Component {
   state = {};
   render() {
     return (
-      <TabButton>
+      <TabButton onPress={this.props.onPress}>
         <FontAwesome name='user' size={35} color='white' />
       </TabButton>
     );
