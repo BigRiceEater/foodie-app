@@ -16,12 +16,12 @@ const S = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  modal: {
+  popup: {
+    position: 'absolute',
     backgroundColor: 'lightgreen',
-    opacity: 0.4,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    top: -100,
+    width: 100,
+    height: 100
   }
 });
 
@@ -41,13 +41,7 @@ const FoodieTabBar = (props) => {
 
   return (
     <SafeAreaView>
-      <Modal visible transparent style={S.modalContainer}>
-        <View style={S.modal}>
-          <View style={{ width: 100, height: 100, backgroundColor: 'white' }}>
-            <Text style={{ textAlign: 'center' }}>Hi</Text>
-          </View>
-        </View>
-      </Modal>
+      <View style={S.popup} />
       <View style={S.container}>
         {routes.map((route, routeIndex) => {
           const isRouteActive = routeIndex === activeRouteIndex;
