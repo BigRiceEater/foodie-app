@@ -15,13 +15,6 @@ const S = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  popup: {
-    position: 'absolute',
-    backgroundColor: 'lightgreen',
-    top: -100,
-    width: 100,
-    height: 100
   }
 });
 
@@ -41,7 +34,6 @@ const FoodieTabBar = (props) => {
 
   return (
     <SafeAreaView>
-      <View style={S.popup} />
       <View style={S.container}>
         {routes.map((route, routeIndex) => {
           const isRouteActive = routeIndex === activeRouteIndex;
