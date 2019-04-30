@@ -12,9 +12,10 @@ class DummyFlatList extends Component {
   }
 
   randomColor() {
-    const r = `${Math.random(0, 255)}`;
-    const g = `${Math.random(0, 255)}`;
-    const b = `${Math.random(0, 255)}`;
+    const c = () => Math.random() * 256;
+    const r = `${c()}`;
+    const g = `${c()}`;
+    const b = `${c()}`;
     return `rgb(${r},${g},${b})`;
   }
 
