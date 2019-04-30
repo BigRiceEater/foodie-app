@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
-import ViewOverflow from 'react-native-view-overflow';
 
 import MemberTabButton from './member-tab-button';
 
@@ -35,36 +34,32 @@ const FoodieTabBar = (props) => {
 
   return (
     <SafeAreaView>
-      <ViewOverflow>
-        <View style={S.container} pointerEvents='box-none'>
-          {routes.map((route, routeIndex) => {
-            const isRouteActive = routeIndex === activeRouteIndex;
-            const tintColor = isRouteActive
-              ? activeTintColor
-              : inactiveTintColor;
+      <View style={S.container} pointerEvents='box-none'>
+        {routes.map((route, routeIndex) => {
+          const isRouteActive = routeIndex === activeRouteIndex;
+          const tintColor = isRouteActive ? activeTintColor : inactiveTintColor;
 
-            return (
-              <TouchableOpacity
-                key={routeIndex}
-                style={S.tabButton}
-                onPress={() => {
-                  onTabPress({ route });
-                }}
-                onLongPress={() => {
-                  onTabLongPress({ route });
-                }}
-                accessibilityLabel={getAccessibilityLabel({ route })}>
-                {renderIcon({ route, focused: isRouteActive, tintColor })}
+          return (
+            <TouchableOpacity
+              key={routeIndex}
+              style={S.tabButton}
+              onPress={() => {
+                onTabPress({ route });
+              }}
+              onLongPress={() => {
+                onTabLongPress({ route });
+              }}
+              accessibilityLabel={getAccessibilityLabel({ route })}>
+              {renderIcon({ route, focused: isRouteActive, tintColor })}
 
-                <Text style={{ color: tintColor }}>
-                  {getLabelText({ route })}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-          <MemberTabButton navigation={navigation} />
-        </View>
-      </ViewOverflow>
+              <Text style={{ color: tintColor }}>
+                {getLabelText({ route })}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
+        <MemberTabButton navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 };
