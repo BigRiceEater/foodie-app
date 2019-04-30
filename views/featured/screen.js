@@ -11,10 +11,10 @@ class FeaturedScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <ScrollView style={{ flex: 1 }}>
         <RecommendedShops />
         <DummyFlatList />
-      </View>
+      </ScrollView>
     );
   }
 }
