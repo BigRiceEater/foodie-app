@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+import { Modal, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaView, withOrientation } from 'react-navigation';
 
 import MemberTabButton from './member-tab-button';
 
@@ -12,6 +12,13 @@ const S = StyleSheet.create({
     borderColor: 'tomato'
   },
   tabButton: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  modal: {
+    backgroundColor: 'lightgreen',
+    opacity: 0.4,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
@@ -34,7 +41,14 @@ const FoodieTabBar = (props) => {
 
   return (
     <SafeAreaView>
-      <View style={S.container} pointerEvents='box-none'>
+      <Modal visible transparent style={S.modalContainer}>
+        <View style={S.modal}>
+          <View style={{ width: 100, height: 100, backgroundColor: 'white' }}>
+            <Text style={{ textAlign: 'center' }}>Hi</Text>
+          </View>
+        </View>
+      </Modal>
+      <View style={S.container}>
         {routes.map((route, routeIndex) => {
           const isRouteActive = routeIndex === activeRouteIndex;
           const tintColor = isRouteActive ? activeTintColor : inactiveTintColor;
