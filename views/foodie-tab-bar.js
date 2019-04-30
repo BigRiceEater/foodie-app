@@ -43,7 +43,11 @@ class FoodieTabBar extends Component {
 
     return (
       <SafeAreaView>
-        <Modal style={{ zIndex: 1 }} transparent visible={this.state.showModal}>
+        <Modal
+          animationType='fade'
+          style={{ zIndex: 1 }}
+          transparent
+          visible={this.state.showModal}>
           <MemberCard onPress={this.closeModal} onFabPress={this.closeModal} />
         </Modal>
         <View style={S.container}>
